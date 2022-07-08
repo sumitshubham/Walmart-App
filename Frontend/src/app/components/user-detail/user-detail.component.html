@@ -1,63 +1,84 @@
-<div class="mx-5" style="margin-top: 5rem;">
-    <style>
-        .form-input {
-            background-color: transparent;
-            outline: none;
-            border: none;
-        }
+<div class="mt-5 d-flex justify-content-center" id="starting-div">
+    <div>
+        <div *ngIf="!editMode" class="p-5 mb-5 border profile-container">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <span id="welcome-message">Welcome,</span>
+                    <h5 class="m-2">{{ user.name }}</h5>
+                </div>
+                <div class="">
+                    <button class="btn btn-primary" (click)="editModeFunc()">Edit Profile</button>
+                    <button class="btn btn-danger mx-2" (click)="deleteUser()">Delete</button>
+                    <button class="btn btn-info mx-2" (click)="logOut()">Log out</button>
+                </div>
+            </div>
+            <div class="seperator"></div>
+            <h6 class=" mt-3 mb-2 text-muted text-font">{{ user.username }} &#xb7; {{ user.email }}</h6>
+            <div class="d-flex mt-3">
+                <fa-icon [icon]="marker"></fa-icon>
+                <div class="text-font" style="margin-left: 1rem;">{{ user.address }}</div>
+            </div>
+            <div class="d-flex mt-2">
+                <fa-icon [icon]="phoneIcon"></fa-icon>
+                <div class="text-font" style="margin-left: 1rem;">+91 {{ user.phone }}</div>
+            </div>
+            <!-- <h6>{{ user.cartItems.length }} items in cart</h6> -->
+        </div>
 
-        .form-input:focus {
-            font-weight: bold !important;
-            color: #198754 !important;
-        }
-    </style>
-    <div *ngIf="!editMode">
-        <h1>{{ user.name }}</h1>
-        <h5 class="text-muted">{{ user.username }} &#xb7; {{ user.email }}</h5>
-        <div class="d-flex" style="align-items: baseline;">
-            <fa-icon [icon]="marker" style="margin-right: 1rem;" size="1x"></fa-icon>
-            <h6>{{ user.address }}</h6>
-        </div>
-        <div class="d-flex" style="align-items: baseline;">
-            <fa-icon [icon]="phoneIcon" style="margin-right: 1rem;" size="1x"></fa-icon>
-            <h6>+{{ user.phone }}</h6>
-        </div>
-        <!-- <h6>{{ user.cartItems.length }} items in cart</h6> -->
-        <div class="mt-5">
-            <button class="btn btn-primary" (click)="editModeFunc()" style="margin-right: 0.6rem;">Edit</button>
-            <button class="btn btn-danger mx-2" (click)="deleteUser()">Delete</button>
-            <button class="btn btn-info mx-2" (click)="logOut()">Log out</button>
-        </div>
-    </div>
-    <div *ngIf="editMode">
-        <input type="text" class="form-input" [(ngModel)]="name" autofocus>
-        <div>
-            <input type="text" class="form-input text-muted" [style.width.ch]="username.length" [(ngModel)]="username">
-            <span class="text-muted"> &#xb7; </span>
-            <input type="text" class="form-input text-muted" [(ngModel)]="email">
-        </div>
-        <div>
-            <label for="">Enter Old Password:</label>
-            <input type="text" class="form-input" [(ngModel)]="password">
-            <span *ngIf="incorrectPassword" class="alert alert-danger">Incorrect Password</span>
-        </div>
-        <div>
-            <label for="">Enter New Password:</label>
-            <input type="text" class="form-input" [(ngModel)]="newPassword">
-            <span *ngIf="newPasswordEmpty" class="alert alert-danger">New password cannot be empty</span>
-        </div>
-        <div>
-            <fa-icon [icon]="marker" size="1x"></fa-icon>
-            <input type="text" class="form-input" [(ngModel)]="address">
-        </div>
-        <div class="d-flex">
-            <fa-icon [icon]="phoneIcon"></fa-icon>
-            <input type="text" class="form-input" [(ngModel)]="phone">
-        </div>
-        <!-- <h6 class="mt-2">{{ user.cartItems.length }} items in cart</h6> -->
-        <div class="mt-5">
-            <button class="btn btn-success" style="margin-right: 0.6rem;" (click)="updateUser()">Save</button>
-            <button class="btn btn-secondary mx-2" (click)="editModeFunc()">Cancel</button>
+        <!-- edit mode -->
+        <div *ngIf="editMode" class="p-5 mb-5 border profile-container">
+            <div class="d-flex justify-content-between">
+                <div class="col-auto">
+                    <input type="text" class="form-control" [(ngModel)]="name" autofocus>
+                </div>
+                <div class="">
+                    <button class="btn btn-success" style="margin-right: 0.6rem;" (click)="updateUser()">Save</button>
+                    <button class="btn btn-secondary mx-2" (click)="editModeFunc()">Cancel</button>
+                </div>
+            </div>
+            <div class="seperator"></div>
+            <div>
+                <div class="col-auto d-flex">
+                    <input type="text" class="form-control text-muted" [(ngModel)]="username">
+
+                    <span class="text-muted"> &#xb7; </span>
+                    <input type="text" class="form-control text-muted" [(ngModel)]="email">
+                </div>
+            </div>
+            <div>
+                <div class="col-auto">
+                    <label for="old-password" class="col-form-label">Enter Old Password:</label>
+                </div>
+                <div class="col-auto">
+                    <input type="password" id="old-password" class="form-control" [(ngModel)]="password">
+                    <span *ngIf="incorrectPassword" class="alert-danger p-2">Incorrect Password</span>
+                </div>
+            </div>
+            <div>
+                <div class="col-auto">
+                    <label for="new-password" class="col-form-label">Enter New Password:</label>
+                </div>
+                <div class="col-auto">
+                    <input type="password" id="new-password" class="form-control" [(ngModel)]="newPassword">
+                    <span *ngIf="newPasswordEmpty" class="alert-danger p-2">New password cannot be empty</span>
+                </div>
+                <!-- <label for="">Enter New Password:</label>
+                <input type="text" class="form-input" [(ngModel)]="newPassword"> -->
+                
+            </div>
+            <div class="d-flex mt-2">
+                <fa-icon [icon]="marker" style="margin-top: 0.5rem;"></fa-icon>
+                <div class="col-auto">
+                    <input type="text" class="form-control" [(ngModel)]="address" style="margin-left: 1.2rem;">
+                </div>
+            </div>
+            <div class="d-flex mt-2">
+                <fa-icon [icon]="phoneIcon" style="margin-top: 0.5rem;"></fa-icon>
+                <div class="col-auto">
+                    <input type="text" class="form-control" [(ngModel)]="phone" style="margin-left: 1rem;">
+                </div>
+            </div>
+            <!-- <h6 class="mt-2">{{ user.cartItems.length }} items in cart</h6> -->
         </div>
     </div>
 </div>
