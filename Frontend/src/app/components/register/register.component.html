@@ -1,0 +1,48 @@
+<div class="container-fluid p-5">
+    <div class="px-5 col-12" style="margin-top: 5rem;">
+        <div class="d-flex justify-content-center mb-2">
+            <img id="walmart-logo" class="text-center"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Walmart_Spark.svg/1925px-Walmart_Spark.svg.png"
+                alt="walmart-logo">
+        </div>
+        <h2 class="mx-auto text-center mb-3">Create your Walmart account</h2>
+        <form class="col-7 mx-auto" action="" (submit)="register()">
+            <div class="d-flex justify-content-center flex-column">
+                <div class="d-flex justify-content-center mt-2">
+                    <input type="text" placeholder="Username" name="username" id="username"
+                        class="form-control mt-2 p-2 form-inputs" [(ngModel)]="username" />
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+
+                    <input type="text" placeholder="Name" name="name" id="name"
+                        class="form-control mt-2 p-2 form-inputs" [(ngModel)]="name" />
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <input type="text" placeholder="Email" name="email" id="email"
+                        class="form-control mt-2 p-2 form-inputs" [(ngModel)]="email" />
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <input type="password" placeholder="Password" name="password" id="password"
+                        class="form-control mt-2 p-2 form-inputs" [(ngModel)]="password" />
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <input type="password" placeholder="Confirm password" name="confirmPassword" id="confirmPassword"
+                        class="form-control mt-2 p-2 form-inputs" [(ngModel)]="passwordConfirm" />
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <input type="text" placeholder="Address" name="address" id="address"
+                        class="form-control mt-2 p-2 form-inputs" [(ngModel)]="address" />
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+
+                    <input type="text" placeholder="Phone" name="phone" id="phone"
+                        class="form-control mt-2 p-2 form-inputs" [(ngModel)]="phone" />
+                </div>
+                <div class="d-flex justify-content-center mt-4">
+                    <input type="submit" value="Register" class="btn btn-primary p-2" id="register-btn" />
+                </div>
+            </div>
+            <h4 *ngIf="error" style="text-align: center;" class="alert-danger p-2 m-5 rounded">{{error}}</h4>
+        </form>
+    </div>
+</div>

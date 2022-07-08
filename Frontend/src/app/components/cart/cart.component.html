@@ -1,0 +1,96 @@
+<div class="container-fluid mt-5 d-flex justify-content-center">
+    <div *ngIf="!noItemFlag" class="mt-5">
+        <img src="https://media4.giphy.com/media/Yf7kN6Xdle87K/giphy.gif?cid=ecf05e47k3lods6743z9n6k615q8vrrlogn10d0favon37i4&rid=giphy.gif&ct=s" alt="doge">
+    </div>
+    <div class="p-5" *ngIf="noItemFlag">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container class="d-flex p-2" *ngFor="let cartItems of cartItems; let i = index">
+                    <tr>
+                        <td><img src={{cartItems.image_url}} alt=""></td>
+                        <td>{{cartItems.title}}</td>
+                        <td><button class="btn btn-light" (click)="updateQuantity(cartItems.id,cartItems.quantity-1)">-</button><span class="p-2">{{cartItems.quantity}}</span><button class="btn btn-light" (click)="updateQuantity(cartItems.id,cartItems.quantity+1)">+</button></td>
+                        <td colspan="2">${{cartItems.price}}</td>
+                        <button class="btn btn-danger m-2" (click)="delete(cartItems.id)" >delete</button>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<!-- <div class="mx-5" style="margin-top: 5rem;">
+    <style>
+        table * {
+            border: none;
+        }
+    </style>
+    <h1>Cart</h1>
+    <table class="table mt-5">
+        <thead style="background-color: #fff2; border: none;" class="mb-5">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Date Added to Cart</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of cartItems; let i = index">
+            <tr>
+                <th scope="row" routerLink="/shop/products/{{item.product.id}}">{{item.product.name}}</th>
+                <td>${{item.product.price | number: '1.2-2'}}</td>
+                <td>
+                    <div class="d-flex" style="align-items: center;">
+                        <p style="margin-right: 1rem;">{{ item.quantity }}</p>
+                        <button class="bg-transparent">
+                            <fa-icon 
+                            [icon]="caretDown" 
+                            [style.color]="'#faa'" 
+                            class="mx-1" 
+                            size="2x"
+                            (click)="decreaseQuantity(item)"
+                        ></fa-icon>
+                        </button>
+                        <button class="bg-transparent">
+                            <fa-icon 
+                            [icon]="caretUp" 
+                            [style.color]="'#afa'" 
+                            class="mx-1" 
+                            size="2x"
+                            (click)="increaseQuantity(item)"
+                        ></fa-icon>
+                        </button>
+                    </div>
+                </td>
+                <td>{{item.addedOn | date: 'MM/dd/YYYY'}}</td>
+                <td>${{item.totalPrice | number: '1.2-2'}}</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><h4 class="text-success font-weight-bold">${{getTotal() | number: '1.2-2'}}</h4></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button class="btn btn-success" *ngIf="cartItems">Checkout</button></td>
+              </tr>
+        </tbody>
+    </table>
+</div> -->

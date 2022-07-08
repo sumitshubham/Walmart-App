@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
+*{
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+#walmart-logo{
+    width: 4%;
+}
+
+#login-container{
+    margin-top: 100px;
+    height: 400px;
+    width: fit-content;
+}
+
+#login-btn{
+    width: 250px;
+    color: white;
+    border-radius: 20px;
+}
+
+.form-inputs{
+    width: 400px;
+}

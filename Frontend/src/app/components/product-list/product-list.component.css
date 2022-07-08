@@ -1,0 +1,17 @@
+*{
+    color: black;
+}
+
+#item-container{
+    width: 400px;
+    height: 400px;
+}
+
+#search-result-container {
+    margin-top: 90px;
+    padding: 20px;
+}
+
+#loading-div{
+    margin-bottom: 200px;
+}

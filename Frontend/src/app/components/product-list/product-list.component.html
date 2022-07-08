@@ -1,0 +1,26 @@
+<div id="search-result-container">
+    <div class="">
+        <h3 class=""><b>Results for "{{term}}"</b></h3>
+    </div>
+    <div class="d-flex" style="justify-content: center; flex-wrap: wrap;">
+        <div *ngIf="loading" id="loading-div">
+            <img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="loading image not found">
+        </div>
+        <div *ngFor="let product of products; let i = index">
+            <div class="container-fluid card p-2 m-2" id="item-container">
+                <div><img [src]=product.image alt=""></div>
+                <div><b>{{product.name}}</b></div>
+                <div>
+                    <div class="mt-4">{{product.priceInfo.linePrice}}</div>
+                    <!-- <a routerLink="/shop/products/{{product.id}}" class="btn btn-danger">Add</a> -->
+                    <!-- *ngIf="product.canAddToCart" -->
+                    <button  class="btn btn-success" [disabled]="!user"
+                        (click)="addToCart(i,$event)">Add to favorite</button>
+                    <div *ngIf="productsStatus[i]" class="alert alert-warning"><b>Product added to favorite</b></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

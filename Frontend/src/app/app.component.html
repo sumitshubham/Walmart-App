@@ -1,0 +1,83 @@
+<div>
+  <nav class="navbar navbar-expand-lg col-12 px-5 p-3 fixed-top">
+    <a class="navbar-brand" href="#">
+      <img
+        src="https://i5.walmartimages.com/dfw/63fd9f59-b3e1/7a569e53-f29a-4c3d-bfaf-6f7a158bfadd/v1/walmartLogo.svg"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" id="shop-id">
+          <!-- <a class="nav-link" routerLink="shop">Shop</a> -->
+        </li>
+      </ul>
+      <form class="form-inline d-flex" id="search-form" (submit)="search()">
+        <input class="form-control" id="search-bar" type="search"
+          placeholder="Search everything at Walmart online and in store" aria-label="Search" [(ngModel)]="term"
+          name="term">
+        <button class="btn" id="search-icon" type="submit">
+          <div class="icons8-search"></div>
+        </button>
+      </form>
+      <ul class="navbar-nav mr-auto">
+        <li *ngIf="!isTokenThere" class="nav-item">
+          <a class="nav-link" routerLink="register">Register</a>
+        </li>
+        <li *ngIf="!isTokenThere" class="nav-item d-flex">
+          <a class="nav-link" routerLink="login">Login</a>
+        </li>
+        <li *ngIf="isTokenThere" class="nav-item">
+          <a class="nav-link" routerLink="account">{{username}}</a>
+        </li>
+        <li *ngIf="isTokenThere" class="nav-item">
+          <a class="nav-link" routerLink="cart">WishList</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+
+<div class="footer-clean">
+  <footer>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-4 col-md-3 item">
+          <h3>Members</h3>
+          <ul>
+            <li><a href="#">Sumit</a></li>
+            <li><a href="#">Boomi</a></li>
+            <li><a href="#">Mahathi</a></li>
+            <li><a href="#">Sneha</a></li>
+            <li><a href="#">Manoj</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4 col-md-3 item">
+          <!-- <h3>About</h3>
+          <ul>
+            <li><a href="#">Company</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Legacy</a></li>
+          </ul> -->
+        </div>
+        <div class="col-sm-4 col-md-3 item">
+          <!-- <h3>Careers</h3>
+          <ul>
+            <li><a href="#">Job openings</a></li>
+            <li><a href="#">Employee success</a></li>
+            <li><a href="#">Benefits</a></li>
+          </ul> -->
+        </div>
+        <div class="col-lg-3 item social">
+          <!-- <a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+              class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a
+            href="#"><i class="icon ion-social-instagram"></i></a> -->
+          <p class="copyright">Walmart App © 2022</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
