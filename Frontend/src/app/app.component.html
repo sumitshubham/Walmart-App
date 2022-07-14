@@ -13,6 +13,9 @@
         <li class="nav-item" id="shop-id">
           <!-- <a class="nav-link" routerLink="shop">Shop</a> -->
         </li>
+        <li *ngIf="isTokenThere" class="nav-item" style="margin-left: 2rem;">
+          <a class="nav-link" routerLink="cart">WishList</a>
+        </li>
       </ul>
       <form class="form-inline d-flex" id="search-form" (submit)="search()">
         <input class="form-control" id="search-bar" type="search"
@@ -32,9 +35,6 @@
         <li *ngIf="isTokenThere" class="nav-item">
           <a class="nav-link" routerLink="account">{{username}}</a>
         </li>
-        <li *ngIf="isTokenThere" class="nav-item">
-          <a class="nav-link" routerLink="cart">WishList</a>
-        </li>
       </ul>
     </div>
   </nav>
@@ -46,13 +46,13 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-sm-4 col-md-3 item">
-          <h3>Members</h3>
+          <h3>Team ByteCode Blasters</h3>
           <ul>
-            <li><a href="#">Sumit</a></li>
-            <li><a href="#">Boomi</a></li>
-            <li><a href="#">Mahathi</a></li>
-            <li><a href="#">Sneha</a></li>
-            <li><a href="#">Manoj</a></li>
+            <li><a href="https://www.instagram.com/lajeffe_/">Sumit Shubham</a></li>
+            <li><a href="https://www.instagram.com/bomikamuralikrishna/">M Boomika</a></li>
+            <li><a href="https://www.instagram.com/mahathi_kunda/">K Sai Mahathi</a></li>
+            <li><a href="#">Sneha Balu Koli</a></li>
+            <li><a href="https://www.instagram.com/_saimanojkumar_/">Sai Manoj Kumar Dara</a></li>
           </ul>
         </div>
         <div class="col-sm-4 col-md-3 item">
@@ -72,10 +72,13 @@
           </ul> -->
         </div>
         <div class="col-lg-3 item social">
-          <!-- <a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
-              class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a
-            href="#"><i class="icon ion-social-instagram"></i></a> -->
+          <a href="https://www.facebook.com/walmart/"><img src="https://cdn-icons.flaticon.com/png/512/4494/premium/4494475.png?token=exp=1657644150~hmac=20277855cd6a97e3a55e8f98cad5acf2" alt="" style="width: 35px; margin-bottom:5px">
+          </a>
+          <a href="https://twitter.com/Walmart?s=20&t=SXig2HFerHDEEcY1QqoYnA"><img src="https://cdn-icons.flaticon.com/png/512/4494/premium/4494477.png?token=exp=1657644150~hmac=2139fbd054ee544d383a2eb53572988b" alt="" style="width: 35px; margin-bottom:5px"></a>
+          <a href="https://www.instagram.com/walmart/"><img src="https://cdn-icons.flaticon.com/png/512/4494/premium/4494488.png?token=exp=1657644150~hmac=b72348ec0e18fc8570c8bde479f571fb" alt="" style="width: 35px; margin-bottom:5px"></a>
+          <a href="https://www.youtube.com/walmart"><img src="https://cdn-icons.flaticon.com/png/512/4494/premium/4494485.png?token=exp=1657644150~hmac=9534da809f82a93360f7f07b8c72e373" alt="" style="width: 35px; margin-bottom:5px"></a>
           <p class="copyright">Walmart App © 2022</p>
+          <p class="copyright" style="font-size: 18px;"><b>Mentor: B.V. Sagar</b></p>
         </div>
       </div>
     </div>

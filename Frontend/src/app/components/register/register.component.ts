@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
         }
 
         this.usersService.register(
-            this.username, this.password, this.email, this.email, this.address, this.phone).subscribe((token : Token) => {
+            this.username, this.password, this.email, this.name, this.address, this.phone).subscribe((token : Token) => {
                 localStorage.setItem('token', token.token);
                 this.router.navigateByUrl('/account').then(() => window.location.reload())
             }, (error : ErrorEvent) => {

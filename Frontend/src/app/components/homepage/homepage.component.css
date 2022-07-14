@@ -1,47 +1,52 @@
 * {
-    margin: 0;
-    padding: 0;
-    color: black;
+  margin: 0;
+  padding: 0;
+  color: black;
 }
 
-#starting-div{
-    padding-top: 2.5rem;
+#starting-div {
+  padding-top: 2.5rem;
 }
 
-.heading{
-    font-weight: bold;
-    font-size: 1.5rem;
+.heading {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-#summer-offer{
-    margin: 0 5%;
+#summer-offer {
+  margin: 0 5%;
 }
 
-#offer{
-    font-weight: bold;
-    font-size: 1rem;
-    color: white;
-    background-color: #0071dc;
-    border-radius: 10px;
-    
-    margin-left: 25%;
-    width: 50%;
+#offer {
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  background-color: #0071dc;
+  border-radius: 10px;
+
+  margin-left: 25%;
+  width: 50%;
 }
 
-.seperator{
-    width: 100%;
-    height: 2px;
-    margin: 1.5rem 0;
-    background-image: radial-gradient(#CCC, #FFF), radial-gradient(#CCC, #FFF);
-    background-position: 0, 100%, 0, 100%;
+.seperator {
+  width: 100%;
+  height: 2px;
+  margin: 1.5rem 0;
+  background-image: radial-gradient(#CCC, #FFF), radial-gradient(#CCC, #FFF);
+  background-position: 0, 100%, 0, 100%;
 }
 
-.card{
-    flex-basis: 50%;
+#offer a{
+  color: white;
+  text-decoration: none;
 }
 
-.card-div{
-    padding: 0 5%;
+.card {
+  flex-basis: 50%;
+}
+
+.card-div {
+  padding: 0 5%;
 }
 
 
@@ -100,4 +105,19 @@
 
 .btn:-webkit-details-marker {
   display: none;
+}
+
+@media (max-width:768px) {
+  #summer-offer {
+    flex-direction: column;
+  }
+
+  #season-div{
+    flex-direction: column;
+    padding-right: 25px;
+  }
+
+  #starting-div{
+    padding-top: 130px;
+  }
 }

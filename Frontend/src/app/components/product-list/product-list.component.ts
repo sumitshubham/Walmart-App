@@ -34,7 +34,7 @@ export class ProductListComponent implements OnInit {
         console.log("https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-search-by-keyword?keyword=" + searchTerm + "&page=1&sortBy=best_match");
         ///api call
         let headers = new HttpHeaders({
-            'X-RapidAPI-Key': '08296866bfmsha0c126faf9073c4p196db0jsn250c31341088',
+            'X-RapidAPI-Key': 'dc783654camsh9d91bddc0508e76p1a2272jsne2626e918347',
             'X-RapidAPI-Host': 'axesso-walmart-data-service.p.rapidapi.com'
         });
         this.http
@@ -74,7 +74,7 @@ export class ProductListComponent implements OnInit {
         //     this.getCartItem()
         // })
 
-        console.log("before disecting = "+(this.products[index].image).substring(33, this.products[index].image.length));
+        console.log("before disecting = " + (this.products[index].image).substring(33, this.products[index].image.length));
         let disectUrl = (this.products[index].image).substring(33, this.products[index].image.length).split("?");
         console.log(disectUrl[0]);
 
