@@ -15,3 +15,5 @@ Steps to run the application:
 4. Run the server, api gateway, walmart user and walmart wishlist as springboot application. 
 5. Open Frontend in VSCode and run "npm install node" to install node modules.
 6. Run "ng serve" to launch the frontend application.
+7.and hence your project is ready
+
